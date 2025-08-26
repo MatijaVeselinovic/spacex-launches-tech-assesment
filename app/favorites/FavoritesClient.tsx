@@ -17,8 +17,7 @@ export default function FavoritesClient() {
     queryFn: () => queryLaunchesByIds(list),
     enabled: list.length > 0,
     placeholderData: keepPreviousData,
-    // Reduce noisy refetches on focus/mount; optional:
-    staleTime: 60_000,
+    staleTime: 60000,
     refetchOnWindowFocus: false,
     refetchOnMount: false,
 

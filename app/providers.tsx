@@ -11,7 +11,7 @@ export default function Providers({ children }: { children: ReactNode }) {
         defaultOptions: {
           queries: {
             retry: 2,
-            staleTime: 60_000,
+            staleTime: 600000,
           },
         },
       }),

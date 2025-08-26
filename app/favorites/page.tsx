@@ -13,7 +13,6 @@ export default function Page() {
         Your bookmarked launches are saved in this browser.
       </p>
 
-      {/* Client-only list to avoid SSR/localStorage mismatch */}
       <FavoritesClient />
     </div>
   );

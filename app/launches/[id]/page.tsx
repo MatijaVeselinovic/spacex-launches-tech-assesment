@@ -14,7 +14,7 @@ function getRevalidateFor(dateIso: string, upcoming: boolean) {
 }
 
 export default async function Page({ params }: { params: { id: string } }) {
-  const launch = await getLaunch(params.id, 0); // we'll control downstream revalidate per resource
+  const launch = await getLaunch(params.id, 0);
   const revalidate = getRevalidateFor(launch.date_utc, launch.upcoming);
   const [rocket, pad] = await Promise.all([
     getRocket(launch.rocket, revalidate),

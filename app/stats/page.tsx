@@ -2,7 +2,7 @@ import dynamic from "next/dynamic";
 
 const ChartsClient = dynamic(() => import("./ChartsClient"), { ssr: false });
 
-export const revalidate = 86400; // daily
+export const revalidate = 86400; // one day
 
 export default async function Page() {
   // Fetch all (non-paginated) with only small fields

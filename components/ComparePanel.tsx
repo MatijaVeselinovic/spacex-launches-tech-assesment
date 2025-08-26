@@ -50,14 +50,12 @@ export default function ComparePanel({
   const [leftId, setLeftId] = React.useState(initialLeft);
   const [rightId, setRightId] = React.useState(initialRight);
 
-  // This is the ONLY trigger for fetching; set when user clicks "Compare".
   const [pair, setPair] = React.useState<{
     left: string;
     right: string;
   } | null>(null);
 
   const { data, isFetching, isError, error } = useQuery({
-    // Tie the key to the submitted pair so edits don't auto-refetch
     queryKey: pair ? ["compare", pair.left, pair.right] : ["compare", "idle"],
     queryFn: async () => {
       const [L, R] = await Promise.all([
@@ -66,8 +64,8 @@ export default function ComparePanel({
       ]);
       return { L, R };
     },
-    enabled: !!pair, // fetch only when a pair has been submitted
-    staleTime: 60_000,
+    enabled: !!pair,
+    staleTime: 60000,
   });
 
   const onSubmit = (e: React.FormEvent) => {
@@ -80,7 +78,7 @@ export default function ComparePanel({
   const onClear = () => {
     setLeftId("");
     setRightId("");
-    setPair(null); // also hide previous results
+    setPair(null);
   };
 
   const statusText = (s: boolean | null) =>
