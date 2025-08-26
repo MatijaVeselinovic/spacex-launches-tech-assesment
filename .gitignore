@@ -1,0 +1,15 @@
+node_modules/
+.npm/
+.next/
+.out/
+dist/
+build/
+*.tsbuildinfo
+.env
+logs/
+*.log
+npm-debug.log*
+coverage/
+.nyc_output/
+jest.cache/
+.jest/
