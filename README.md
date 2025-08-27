@@ -20,6 +20,21 @@ npm dev
 # open http://localhost:3000
 ```
 
+## How to test
+
+```bash
+npm run test
+npm run test:watch
+npm run test:ci 
+```
+
+## How to format
+
+```bash
+npm run format
+npm run format:check
+```
+
 ## Routes
 
 - `/launches` — Server-rendered first page, client infinite scroll. Filters in URL. Proper server-side pagination with `/launches/query`.
